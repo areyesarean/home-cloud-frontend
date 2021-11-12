@@ -1,0 +1,25 @@
+<button mat-stroked-button color="accent" (click)="back()">
+  <mat-icon>subdirectory_arrow_left</mat-icon> Back
+</button>
+<button mat-stroked-button color="accent" class="ml">
+  <mat-icon>cloud_upload</mat-icon> Upload files
+</button>
+
+<mat-divider style="margin-top: 7px;"></mat-divider>
+<div mat-subheader>Folders</div>
+<div *ngIf="folders.length == 0">
+  <mat-card-subtitle>
+    <button mat-stroked-button disabled>
+      <mat-icon color="warn">info</mat-icon> Not sub folders in this folder
+    </button>
+  </mat-card-subtitle>
+</div>
+
+<mat-list-item
+  class="pointer"
+  *ngFor="let folder of folders"
+  (click)="url(folder)"
+>
+  <mat-icon mat-list-icon color="accent">folder</mat-icon>
+  <div mat-line>{{ folder }}</div>
+</mat-list-item>
