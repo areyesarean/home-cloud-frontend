@@ -15,13 +15,6 @@ export class StorageService {
       let pathn: string[] = JSON.parse(localStorage.getItem('path')!);
       localStorage.removeItem('path');
       pathn.push(folderName.toString());
-      // const arrTwo = path.filter((element, pos) => {
-      //   return path.indexOf(element) == pos;
-      // });
-
-      console.log('el final');
-      console.log(JSON.stringify(pathn));
-
       localStorage.setItem('path', JSON.stringify(pathn));
     }
   }
@@ -30,10 +23,9 @@ export class StorageService {
     if (localStorage.getItem('path')) {
       let path: string[] = JSON.parse(localStorage.getItem('path')!);
       let res = path.join('-');
-      console.log(res);
       return res;
     }
-    return ''
+    return '';
   }
 
   back() {

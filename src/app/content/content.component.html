@@ -3,7 +3,12 @@
   <mat-card-subtitle>You are in the folder: {{ path }}</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-list>
-    <app-folders [folders]="folders" (onPath)="showData($event)" (onBack)="showData($event)"></app-folders>
+    <app-folders
+      [folders]="folders"
+      (onPath)="showData($event)"
+      (onBack)="showData($event)"
+      (onRefresh)="showData($event)"
+    ></app-folders>
     <mat-divider></mat-divider>
     <app-files [files]="files"></app-files>
   </mat-list>

@@ -1,8 +1,11 @@
 <button mat-stroked-button color="accent" (click)="back()">
   <mat-icon>subdirectory_arrow_left</mat-icon> Back
 </button>
-<button mat-stroked-button color="accent" class="ml">
+<button mat-stroked-button color="accent" class="ml" (click)="uploadFile()">
   <mat-icon>cloud_upload</mat-icon> Upload files
+</button>
+<button mat-stroked-button color="accent" class="ml" (click)="mkdir()">
+  <mat-icon>folder</mat-icon> Create folder
 </button>
 
 <mat-divider style="margin-top: 7px;"></mat-divider>

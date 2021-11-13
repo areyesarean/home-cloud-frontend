@@ -1,0 +1,14 @@
+<h2 mat-dialog-title>Upload files</h2>
+<mat-dialog-content>
+  <input type="file" class="mb" (change)="setFile($event)" />
+</mat-dialog-content>
+<mat-divider></mat-divider>
+<mat-dialog-actions>
+  <button mat-stroked-button color="warn" mat-dialog-close="true" class="ml">
+    <mat-icon>cancel</mat-icon> Close
+  </button>
+
+  <button mat-stroked-button color="accent" (click)="uploadFiles()">
+    <mat-icon>cloud_upload</mat-icon> Upload
+  </button>
+</mat-dialog-actions>

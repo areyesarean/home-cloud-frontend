@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>Create Folder</h2>
+<mat-dialog-content>
+  <mat-form-field color="accent" appearance="fill">
+    <mat-label>Folder name</mat-label>
+    <input [formControl]="search" matInput placeholder="Folder name"/>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-divider></mat-divider>
+<mat-dialog-actions>
+  <button mat-stroked-button color="warn" mat-dialog-close="true" class="ml">
+    <mat-icon>cancel</mat-icon> Close
+  </button>
+
+  <button mat-stroked-button color="accent" mat-dialog-close="true" (click)="mkdir()">
+    <mat-icon>folder</mat-icon> Create
+  </button>
+</mat-dialog-actions>
