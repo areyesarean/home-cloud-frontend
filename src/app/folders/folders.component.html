@@ -1,16 +1,16 @@
 <div>
-  <button mat-stroked-button color="accent" (click)="back()">
+  <button mat-stroked-button color="accent" (click)="back()" *ngIf="!base">
     <mat-icon>subdirectory_arrow_left</mat-icon> Back
   </button>
   <button mat-stroked-button color="accent" class="ml" (click)="uploadFile()">
-    <mat-icon>cloud_upload</mat-icon> Upload files
+    <mat-icon>cloud_upload</mat-icon> Upload
   </button>
   <button mat-stroked-button color="accent" class="ml" (click)="mkdir()">
-    <mat-icon>folder</mat-icon> Create folder
+    <mat-icon>folder</mat-icon> New folder
   </button>
 </div>
 
-<mat-divider style="margin-top: 7px;"></mat-divider>
+<mat-divider style="margin-top: 7px"></mat-divider>
 <div mat-subheader>Folders</div>
 <div *ngIf="folders.length == 0">
   <mat-card-subtitle>

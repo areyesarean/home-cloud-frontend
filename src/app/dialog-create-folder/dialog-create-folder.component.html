@@ -1,10 +1,11 @@
 <h2 mat-dialog-title>Create Folder</h2>
 <mat-dialog-content>
-  <mat-form-field color="accent" appearance="fill">
+  <mat-form-field color="accent" appearance="fill" class="full-width">
     <mat-label>Folder name</mat-label>
-    <input [formControl]="search" matInput placeholder="Folder name"/>
+    <input [formControl]="search" matInput placeholder="Nueva_carpeta"/>
   </mat-form-field>
 </mat-dialog-content>
+<h5>Leave blank to create a folder called Nueva_carpeta</h5>
 <mat-divider></mat-divider>
 <mat-dialog-actions>
   <button mat-stroked-button color="warn" mat-dialog-close="true" class="ml">

@@ -20,8 +20,7 @@ export class DialogCreateFolderComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.search.valueChanges.pipe(debounceTime(300)).subscribe((value) => {
-      console.log(value);
+    this.search.valueChanges.pipe(debounceTime(100)).subscribe((value) => {
       this.foldername = value;
     });
   }

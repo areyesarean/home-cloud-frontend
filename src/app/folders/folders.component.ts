@@ -14,7 +14,7 @@ import { StorageService } from '../services/storage.service';
 })
 export class FoldersComponent implements OnInit {
   @Input() folders: string[] = [];
-  path: string = '';
+  base: boolean = true;
 
   @Output() onPath: EventEmitter<string> = new EventEmitter();
   @Output() onBack: EventEmitter<string> = new EventEmitter();
@@ -28,13 +28,25 @@ export class FoldersComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  isBase() {
+    console.log(this._local.getLocal());
+
+    if (this._local.getLocal() == '') {
+      this.base = true;
+    } else {
+      this.base = false;
+    }
+  }
+
   url(forlderName: string) {
     this._local.setLocal(forlderName);
     this.onPath.emit(this._local.getLocal());
+    this.isBase();
   }
   back() {
     this._local.back();
     this.onPath.emit(this._local.getLocal());
+    this.isBase();
   }
 
   uploadFile() {
@@ -51,7 +63,6 @@ export class FoldersComponent implements OnInit {
       disableClose: true,
     });
     dialogRef.afterClosed().subscribe((param) => {
-      console.log(param);
       this.onRefresh.emit(this._local.getLocal());
     })
   }
