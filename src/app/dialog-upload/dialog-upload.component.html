@@ -2,6 +2,16 @@
 <mat-dialog-content>
   <input type="file" class="mb" (change)="setFile($event)" />
 </mat-dialog-content>
+<mat-progress-bar
+  *ngIf="uploading"
+  class="example-margin"
+  [color]="color"
+  [mode]="mode"
+  [value]="value"
+>
+</mat-progress-bar>
+<h5 *ngIf="value==100">Files upload successful</h5>
+<h5 *ngIf="value<100 && uploading==true">Uploading files...</h5>
 <mat-divider></mat-divider>
 <mat-dialog-actions>
   <button mat-stroked-button color="warn" mat-dialog-close="true" class="ml">

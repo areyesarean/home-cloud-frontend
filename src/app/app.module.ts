@@ -25,6 +25,8 @@ import { FilesComponent } from './files/files.component';
 import { DialogUploadComponent } from './dialog-upload/dialog-upload.component';
 import { DialogCreateFolderComponent } from './dialog-create-folder/dialog-create-folder.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
   ],
   entryComponents: [DialogUploadComponent, DialogCreateFolderComponent],
   providers: [],
